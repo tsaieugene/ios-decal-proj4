@@ -23,10 +23,13 @@
   * song that receives the most votes is played next
   
 ##Implementation
+
 ###Model
   * SongChoices.swift
+
 ###View
   * VoteForSongListTableView
+
 ###Controller
   * SplashScreenViewController.swift
   * LogInScreenViewController.swift
