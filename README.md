@@ -6,8 +6,8 @@
   * Alex Huang
 
 ##Purpose
-  * during long car rides there is usually just one person playing music. This app 
-  will allow everyone to choose which music is being played.
+  * during long car rides there is usually just one person playing music. This 
+ app will allow everyone to choose which music is being played.
 
 ##Features
   * connect to multiple Soundcloud accounts
