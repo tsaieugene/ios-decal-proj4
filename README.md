@@ -1,7 +1,7 @@
 # Vote for Music
 
 ##Authors
-..*Eugene Tsai
+  +Eugene Tsai
   *Eddy Kim
   *Alex Huang
 
