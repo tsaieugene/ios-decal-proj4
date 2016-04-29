@@ -46,6 +46,7 @@ class MainViewController: UITabBarController {
         groupTab.tabBarItem = groupTabItem
         searchTab.tabBarItem = searchTabItem
         playlistTab.tabBarItem = playlistTabItem
+        self.selectedIndex = 1
                 
     }
     

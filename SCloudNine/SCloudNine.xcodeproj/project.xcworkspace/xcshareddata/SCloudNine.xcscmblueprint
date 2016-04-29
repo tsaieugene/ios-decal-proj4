@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5F67E6FF4BC90F298F8909664D1FE55F002407A2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B63EF893AB1953F132620161E34E978A803355FE" : 0,
+    "5F67E6FF4BC90F298F8909664D1FE55F002407A2" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0DDBB39E-C5BF-432D-AE70-6947C4049A05",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B63EF893AB1953F132620161E34E978A803355FE" : "",
+    "5F67E6FF4BC90F298F8909664D1FE55F002407A2" : "ios-decal-proj4\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SCloudNine",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "SCloudNine\/SCloudNine.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/tsaieugene\/ios-decal-proj4",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5F67E6FF4BC90F298F8909664D1FE55F002407A2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/iosdecal\/ios-decal-proj1",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B63EF893AB1953F132620161E34E978A803355FE"
+    }
+  ]
+}

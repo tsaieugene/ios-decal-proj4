@@ -36,6 +36,12 @@ struct Constants {
     
     static var songsInPlaylist = []
     
+    // NavBar Items
+    static let navBarWidth: CGFloat = screenWidth
+    static let navBarHeight = 0.1 * screenHeight
+    static let navItemWidth = 30.0
+    static let navItemHeight = 30.0
+    
     // Gets the middle pixel in respect to the screen width and the object width
     static func centerHorizontally(objectSize: CGFloat) -> CGFloat {
         return screenWidth/2 - objectSize/2

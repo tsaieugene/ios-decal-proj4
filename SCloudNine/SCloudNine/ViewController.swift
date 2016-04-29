@@ -37,6 +37,7 @@ class ViewController: UIViewController {
         let logoFrame = CGRect(x: Constants.centerHorizontally(Constants.logoWidth), y: Constants.screenHeight - (Constants.screenHeight*9/10), width: Constants.logoWidth, height: Constants.logoHeight)
         let logo = UIImageView(image: UIImage(named: "SCloudNine_login"))
         logo.frame = logoFrame
+        logo.contentMode = UIViewContentMode.ScaleAspectFill
         view.addSubview(logo)
         
         // Create the label.
@@ -44,7 +45,7 @@ class ViewController: UIViewController {
         let appDescriptionFrame = CGRect(x: Constants.centerHorizontally(Constants.labelWidth), y: 10 + CGRectGetMaxY(logoFrame), width: Constants.labelWidth, height: Constants.labelHeight)
         appDescription.frame = appDescriptionFrame
         appDescription.text = "A place to build a playlist together with your friends."
-        appDescription.numberOfLines = 5
+        appDescription.numberOfLines = 2
         appDescription.textAlignment = NSTextAlignment.Center
         view.addSubview(appDescription)
         
