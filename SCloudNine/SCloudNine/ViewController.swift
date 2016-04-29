@@ -53,13 +53,13 @@ class ViewController: UIViewController {
         let loginButtonFrame = CGRect(x: Constants.centerHorizontally(Constants.loginButtonWidth), y: 5 + CGRectGetMaxY(appDescriptionFrame), width: Constants.loginButtonWidth, height: Constants.loginButtonHeight)
         loginButton.frame = loginButtonFrame
         loginButton.setImage(UIImage(named: "connectWithSoundCloudImage"), forState: UIControlState.Normal)
-        loginButton.addTarget(self, action: #selector(ViewController.loginButtonPressed(_:)), forControlEvents: .TouchUpInside)
+        loginButton.addTarget(self, action: "loginButtonPressed", forControlEvents: .TouchUpInside)
         view.addSubview(loginButton)
         
     }
     
     // Takes user to authentication/login page.
-    func loginButtonPressed(sender: UIButton!) {
+    func loginButtonPressed() {
         self.presentViewController(tabController, animated: true, completion: nil)
     }
 
