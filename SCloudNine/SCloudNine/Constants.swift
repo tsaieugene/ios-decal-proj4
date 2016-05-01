@@ -30,8 +30,8 @@ struct Constants {
     static let tabBarHeight : CGFloat = 0.1 * screenHeight
     static let tabItemWidth : CGFloat = 30.0
     static let tabItemHeight : CGFloat = 30.0
-    static var onGroupPage : Bool = false
-    static var onSearchPage : Bool = true
+    static var onGroupPage : Bool = true
+    static var onSearchPage : Bool = false
     static var onPlaylistPage : Bool = false
     
     static var songsInPlaylist = []
@@ -42,7 +42,18 @@ struct Constants {
     static let navItemWidth = 30.0
     static let navItemHeight = 30.0
     
-    // Gets the middle pixel in respect to the screen width and the object width
+    
+    //TextField 
+//    static let textFieldWidth = 31.0
+    static let textFieldHeight: CGFloat = 31.0
+    static func setTextFieldAttributes(someTextField : UITextField) {
+        someTextField.textAlignment = .Center
+        someTextField.autocorrectionType = .No
+        someTextField.textColor = UIColor.orangeColor()
+        someTextField.backgroundColor = UIColor.whiteColor()
+    }
+    
+    // Centers object horizontally
     static func centerHorizontally(objectSize: CGFloat) -> CGFloat {
         return screenWidth/2 - objectSize/2
     }

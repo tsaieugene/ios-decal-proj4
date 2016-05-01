@@ -26,6 +26,7 @@
 		04E880C41CD015A700F00498 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04E880C21CD015A700F00498 /* FontAwesome.ttf */; };
 		CCA45B741CD35914002DB881 /* JoinRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA45B731CD35914002DB881 /* JoinRoomViewController.swift */; };
 		CCA45B7A1CD36B8E002DB881 /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA45B791CD36B8E002DB881 /* CreateRoomViewController.swift */; };
+		CCAD252E1CD5E87600368616 /* InviteToRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAD252D1CD5E87600368616 /* InviteToRoomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		04E880C21CD015A700F00498 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		CCA45B731CD35914002DB881 /* JoinRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JoinRoomViewController.swift; path = ../JoinRoomViewController.swift; sourceTree = "<group>"; };
 		CCA45B791CD36B8E002DB881 /* CreateRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRoomViewController.swift; sourceTree = "<group>"; };
+		CCAD252D1CD5E87600368616 /* InviteToRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteToRoomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				04B8934A1CCC49A000CD3A83 /* Info.plist */,
 				04B893421CCC49A000CD3A83 /* SCloudNine.xcdatamodeld */,
 				0406E66C1CCDB49600FA19B9 /* GroupViewController.swift */,
+				CCAD252D1CD5E87600368616 /* InviteToRoomViewController.swift */,
 				CCA45B791CD36B8E002DB881 /* CreateRoomViewController.swift */,
 				CCA45B731CD35914002DB881 /* JoinRoomViewController.swift */,
 				0406E66A1CCDB48200FA19B9 /* SearchViewController.swift */,
@@ -301,6 +304,7 @@
 				CCA45B7A1CD36B8E002DB881 /* CreateRoomViewController.swift in Sources */,
 				0406E66B1CCDB48200FA19B9 /* SearchViewController.swift in Sources */,
 				04B8933E1CCC49A000CD3A83 /* ViewController.swift in Sources */,
+				CCAD252E1CD5E87600368616 /* InviteToRoomViewController.swift in Sources */,
 				04B8933C1CCC49A000CD3A83 /* AppDelegate.swift in Sources */,
 				04B893441CCC49A000CD3A83 /* SCloudNine.xcdatamodeld in Sources */,
 				0406E6651CCCAC7400FA19B9 /* Constants.swift in Sources */,

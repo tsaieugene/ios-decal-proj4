@@ -12,10 +12,10 @@ import UIKit
 class SearchViewController: UIViewController, UISearchBarDelegate {
     var searchBar = UISearchBar()
     let searchResults = UIWebView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = UIColor(red: 0.914, green: 0.918, blue: 0.918, alpha: 1)
         self.searchBar.delegate = self
         
         // Create the search bar.
@@ -28,6 +28,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         
         // Create the webview that loads the search results from SoundCloud.
         searchResults.frame = CGRect(x: 0.0, y: searchBar.bounds.maxY, width: Constants.screenHeight, height: self.view.frame.size.height - Constants.screenHeight * 0.1)
+        searchResults.backgroundColor = UIColor(red: 0.914, green: 0.918, blue: 0.918, alpha: 1)
         searchResults.tintColor = UIColor.purpleColor()
         view.addSubview(searchResults)
         

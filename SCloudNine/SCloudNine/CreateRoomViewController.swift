@@ -15,30 +15,41 @@ class CreateRoomViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 0.914, green: 0.918, blue: 0.918, alpha: 1)
         // Create navigation bar
         let navBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, Constants.navBarHeight))
-        navBar.backgroundColor = UIColor.redColor()
         
         // Create a navigation item with a title
         let navigationItem = UINavigationItem()
         navigationItem.title = "Create A Room"
         
         // Create back button
-        let backButton =  UIBarButtonItem(title: "Back", style:   UIBarButtonItemStyle.Plain, target: self, action: "goBack:")
+        let backButton =  UIBarButtonItem(title: "Back", style:   UIBarButtonItemStyle.Plain, target: self, action: "goBack")
         navigationItem.leftBarButtonItem = backButton
+        navBar.items = [navigationItem]
+        
+        //Create create button
+        let createButton = UIBarButtonItem(title: "Create", style: UIBarButtonItemStyle.Plain, target: self, action: "createRoom")
+        navigationItem.rightBarButtonItem = createButton
         navBar.items = [navigationItem]
         self.view.addSubview(navBar)
         
         
-        roomNameTextField.frame = CGRect(x: Constants.centerHorizontally(Constants.labelWidth), y: Constants.screenHeight*1/4, width: Constants.labelWidth, height: Constants.labelHeight)
+        roomNameTextField.frame = CGRect(x: Constants.centerHorizontally(Constants.labelWidth), y: Constants.screenHeight*1/4, width: Constants.labelWidth, height: Constants.textFieldHeight)
+//        roomNameTextField.attributedPlaceholder = NSAttributedString(string: "Enter Room Name", attributes: [NSForegroundColorAttributeName : UIColor.whiteColor()])
         roomNameTextField.placeholder = "Enter Room Name"
         roomNameTextField.textAlignment = .Center
+        roomNameTextField.textColor = UIColor.orangeColor()
+        roomNameTextField.backgroundColor = UIColor.whiteColor()
+        roomNameTextField.autocorrectionType = .No
         self.view.addSubview(roomNameTextField)
         
         
-        passwordTextField.frame = CGRect(x: Constants.centerHorizontally(Constants.labelWidth), y: CGRectGetMaxY(roomNameTextField.frame), width: Constants.labelWidth, height: Constants.labelHeight)
+        passwordTextField.frame = CGRect(x: Constants.centerHorizontally(Constants.labelWidth), y: CGRectGetMaxY(roomNameTextField.frame) + 10, width: Constants.labelWidth, height: Constants.textFieldHeight)
         passwordTextField.placeholder = "Password (Optional)"
         passwordTextField.textAlignment = .Center
+        passwordTextField.backgroundColor = UIColor.whiteColor()
+        passwordTextField.autocorrectionType = .No
         self.view.addSubview(passwordTextField)
     }
 
@@ -47,8 +58,30 @@ class CreateRoomViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func goBack(sender: UIBarButtonItem) {
-        
+    override func viewDidDisappear(animated: Bool) {
+        roomNameTextField.text = ""
+        passwordTextField.text = ""
+    }
+    
+    
+    func goBack() {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func createRoom() {
+        if (roomNameTextField.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "") {
+            MainViewController.roomInfo.append(roomNameTextField.text!)
+            MainViewController.roomMembers.append("Host")
+            if passwordTextField.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "" {
+                MainViewController.roomInfo.append(passwordTextField.text!)
+            }
+            self.presentViewController(MainViewController(), animated: true, completion: nil)
+        } else {
+            let noNameAlert = UIAlertController(title: "No Name Entered", message: "Room must have a name!",preferredStyle: .Alert)
+            noNameAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) -> Void in noNameAlert.dismissViewControllerAnimated(true, completion: nil)
+            }))
+            self.presentViewController(noNameAlert, animated: true, completion: nil)
+        }
     }
     
 

@@ -16,6 +16,8 @@ class MainViewController: UITabBarController {
     var groupTabItem = UITabBarItem()
     var searchTabItem = UITabBarItem()
     var playlistTabItem = UITabBarItem()
+    static var roomInfo = [String]()
+    static var roomMembers = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,9 +48,16 @@ class MainViewController: UITabBarController {
         groupTab.tabBarItem = groupTabItem
         searchTab.tabBarItem = searchTabItem
         playlistTab.tabBarItem = playlistTabItem
-        self.selectedIndex = 1
+        
                 
     }
+    
+//    override func viewWillAppear(animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.view.addSubview(tabBar)
+//    }
+//    
+
     
     // Changes boolean values of page user is on when a tab is clicked.
 //    override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
