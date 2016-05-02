@@ -9,85 +9,45 @@
 import UIKit
 import MultipeerConnectivity
 
-class LookForRoomsToJoinViewController: UIViewController, MCBrowserViewControllerDelegate, MCSessionDelegate {
+class LookForRoomsToJoinViewController: UIViewController, MCNearbyServiceBrowserDelegate, MCSessionDelegate, MCNearbyServiceAdvertiserDelegate {
     
-    let peerID = MCPeerID(displayName: UIDevice.currentDevice().name)
+    var peerID : MCPeerID!
     var session : MCSession!
-    var advertisingAssistant : MCAdvertiserAssistant!
-    var browser : MCBrowserViewController!
+//    var advertisingAssistant : MCAdvertiserAssistant!
+//    var browser : MCBrowserViewController!
+    var nearbyAdvertisingAssistant: MCNearbyServiceAdvertiser!
     var nearbyBrowser: MCNearbyServiceBrowser!
-    var nearbyAdvertiser : MCNearbyServiceAdvertiser!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        session = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .None)
+        peerID = MCPeerID(displayName: UIDevice.currentDevice().name)
+        session = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .Required)
         session.delegate = self
-
-        browser = MCBrowserViewController(serviceType: "SCL", session: session)
-//        browser.view.subviews[1].removeFromSuperview()
-
-        browser.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
-        self.view.addSubview(browser.view)
+        
+//        browser = MCBrowserViewController(serviceType: "scloud-9", session: session)
+//        browser.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+//        self.view.addSubview(browser.view)
 //        print(browser.view.subviews.count)
 //        for views in browser.view.subviews {
 //            print(String(views))
 //        }
-        startHosting()
         
-//        nearbyBrowser = MCNearbyServiceBrowser(peer: peerID, serviceType: "scloud")
-//        nearbyBrowser.delegate = self
-//        nearbyBrowser.startBrowsingForPeers()
-//        
-//        nearbyAdvertiser = MCNearbyServiceAdvertiser(peer: peerID, discoveryInfo: nil, serviceType: "scloud")
-//        nearbyAdvertiser.delegate = self
-//        nearbyAdvertiser.startAdvertisingPeer()
-//        
-//        
-//        
+        
+        nearbyBrowser = MCNearbyServiceBrowser(peer: peerID, serviceType: "scloud")
+        nearbyBrowser.delegate = self
+        nearbyBrowser.startBrowsingForPeers()
+        
+        nearbyAdvertisingAssistant = MCNearbyServiceAdvertiser(peer: peerID, discoveryInfo: nil, serviceType: "scloud")
+        nearbyAdvertisingAssistant.delegate = self
+        nearbyAdvertisingAssistant.startAdvertisingPeer()
+        
+//        startHosting()
+        
+//        self.presentViewController(browser, animated: true, completion: nil)
+        
 
         // Do any additional setup after loading the view.
     }
-    
-    
-//    func browser(browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
-//        print("gone")
-//    }
-//    
-//    func browser(browser: MCNearbyServiceBrowser, didNotStartBrowsingForPeers error: NSError) {
-//        print("failed")
-//    }
-//    
-//    func browser(browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
-//        nearbyBrowser.invitePeer(peerID, toSession: session, withContext: nil, timeout: 10)
-//    }
-//    
-//    func advertiser(advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: NSError) {
-//        print("failed advertising")
-//    }
-//    
-//    func advertiser(advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: NSData?, invitationHandler: (Bool, MCSession) -> Void) {
-//        print("hi")
-//        nearbyBrowser.invitePeer(peerID, toSession: session, withContext: nil, timeout: 5)
-//    }
-//    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -125,22 +85,45 @@ class LookForRoomsToJoinViewController: UIViewController, MCBrowserViewControlle
         }
     }
     
+    func advertiser(advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: NSData?, invitationHandler: (Bool, MCSession) -> Void) {
+        
+    }
+    
     func browserViewControllerDidFinish(browserViewController: MCBrowserViewController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-
+    
     func browserViewControllerWasCancelled(browserViewController: MCBrowserViewController) {
-        print("ye")
-        presentViewController(GroupViewController(), animated: true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     
-    func startHosting() {
-        advertisingAssistant = MCAdvertiserAssistant(serviceType: "SCL", discoveryInfo: nil, session: session)
-        advertisingAssistant.start()
-        print("im hosting")
+    
+    @available(iOS 7.0, *)
+    public func browser(browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?){
+        
     }
     
+    // A nearby peer has stopped advertising.
+    @available(iOS 7.0, *)
+    public func browser(browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID){
+        
+    }
+    
+//    func startHosting() {
+//        advertisingAssistant = MCAdvertiserAssistant(serviceType: "scloud-9", discoveryInfo: nil, session: session)
+//        advertisingAssistant.start()
+//        print("im hosting")
+//    }
+//    
+//    func joinSession() {
+//
+//    }
+    
+    func connectPeer(peerID: MCPeerID, withNearbyConnectionData data: NSData) {
+        
+    }
+
     
     
 
