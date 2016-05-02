@@ -49,19 +49,16 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         print(userInput)
         var scFormattedString = ""
         for i in 0 ..< userInput!.count {
-            
+            scFormattedString += userInput![i]
+            if i != userInput!.count - 1 {
+                scFormattedString += "%20"
+            }
         }
-//        for index in 0...userInput?.count {
-//            scFormattedString += parsedSearch![index]
-//            if index != userInput!.count {
-//                scFormattedString += "%20"
-//            }
-//        }
         
-//        let searchString = "https://soundcloud.com/search?q=" + correctQueryFormat
-//        let urlOfSearch = NSURL(string: searchString)
-//        let request = NSURLRequest(URL: urlOfSearch!)
-//        searchResults.loadRequest(request)
+        let searchString = "https://soundcloud.com/search?q=" + scFormattedString
+        let urlOfSearch = NSURL(string: searchString)
+        let request = NSURLRequest(URL: urlOfSearch!)
+        searchResults.loadRequest(request)
     }
     
     // Add song.

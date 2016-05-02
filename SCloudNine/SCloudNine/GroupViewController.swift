@@ -255,8 +255,8 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     // leads to another VC where rooms can be joined
     func joinRoom() {
-        startHosting()
-        self.presentViewController(browser, animated: true, completion: nil)
+//        startHosting()
+        self.presentViewController(JoinRoomViewController(), animated: true, completion: nil)
         groupMembersView.reloadData()
     }
     

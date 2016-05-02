@@ -2,7 +2,7 @@
 //  PlaylistViewController.swift
 //  SCloudNine
 //
-//  Created by Eddy Kim on 4/24/16.
+//  Created by Eugene Tsai on 4/24/16.
 //  Copyright © 2016 iOSDecal. All rights reserved.
 //
 //
@@ -11,7 +11,7 @@ import UIKit
 
 class PlaylistViewController: UITableViewController {
     
-    var songs = ["song1", "song 2", "song 3"]
+    var songs = ["Two Hearts - Bryson Tiller", "Stay Lost - Joe Hertz", "Almost Famous - G-Eazy"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
