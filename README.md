@@ -1,4 +1,4 @@
-# Vote for Music
+# SCloudNine
 
 ##Authors
   * Eugene Tsai
@@ -19,21 +19,24 @@
   * users log in their accounts in log in screen
   * they join a private group with their friends
   * they submit as many songs as they want to a combined playlist with the group
-  * up to four songs are randomly chosen to be voted on 
   * song that receives the most votes is played next
   
 ##Implementation
 
 ###Model
-  * SongChoices.swift
+  * Constants.swift
+  * FAIcon.swift
 
 ###View
-  * VoteForSongListTableView
+  * ViewController.swift
+  * GroupViewController.swift
+  * MainViewController.swift
 
 ###Controller
-  * SplashScreenViewController.swift
-  * LogInScreenViewController.swift
-  * JoinGroupScreenViewController.swift
+  * CreateRoomViewController.swift
+  * InviteToRoomViewController.swift
+  * LookForRoomsToJoinViewController.swift
+  * JoinRoomViewController.swift
   * SongsScreenViewController.swift
-  * VoteScreenViewController.swift
-  * CurrentPlayList.swift
+  * SearchViewController.swift
+  * PlaylistViewController.swift
