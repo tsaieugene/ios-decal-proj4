@@ -24,6 +24,7 @@
 		04B8935F1CCC49A100CD3A83 /* SCloudNineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8935E1CCC49A100CD3A83 /* SCloudNineUITests.swift */; };
 		04E880C31CD015A700F00498 /* FAIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E880C11CD015A700F00498 /* FAIcon.swift */; };
 		04E880C41CD015A700F00498 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04E880C21CD015A700F00498 /* FontAwesome.ttf */; };
+		CC1D53E71CD6C49C000C78E0 /* LookForRoomsToJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1D53E61CD6C49C000C78E0 /* LookForRoomsToJoinViewController.swift */; };
 		CCA45B741CD35914002DB881 /* JoinRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA45B731CD35914002DB881 /* JoinRoomViewController.swift */; };
 		CCA45B7A1CD36B8E002DB881 /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA45B791CD36B8E002DB881 /* CreateRoomViewController.swift */; };
 		CCAD252E1CD5E87600368616 /* InviteToRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAD252D1CD5E87600368616 /* InviteToRoomViewController.swift */; };
@@ -70,6 +71,7 @@
 		04B893601CCC49A100CD3A83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04E880C11CD015A700F00498 /* FAIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAIcon.swift; sourceTree = "<group>"; };
 		04E880C21CD015A700F00498 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		CC1D53E61CD6C49C000C78E0 /* LookForRoomsToJoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookForRoomsToJoinViewController.swift; sourceTree = "<group>"; };
 		CCA45B731CD35914002DB881 /* JoinRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JoinRoomViewController.swift; path = ../JoinRoomViewController.swift; sourceTree = "<group>"; };
 		CCA45B791CD36B8E002DB881 /* CreateRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRoomViewController.swift; sourceTree = "<group>"; };
 		CCAD252D1CD5E87600368616 /* InviteToRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteToRoomViewController.swift; sourceTree = "<group>"; };
@@ -137,8 +139,9 @@
 				04B8934A1CCC49A000CD3A83 /* Info.plist */,
 				04B893421CCC49A000CD3A83 /* SCloudNine.xcdatamodeld */,
 				0406E66C1CCDB49600FA19B9 /* GroupViewController.swift */,
-				CCAD252D1CD5E87600368616 /* InviteToRoomViewController.swift */,
 				CCA45B791CD36B8E002DB881 /* CreateRoomViewController.swift */,
+				CCAD252D1CD5E87600368616 /* InviteToRoomViewController.swift */,
+				CC1D53E61CD6C49C000C78E0 /* LookForRoomsToJoinViewController.swift */,
 				CCA45B731CD35914002DB881 /* JoinRoomViewController.swift */,
 				0406E66A1CCDB48200FA19B9 /* SearchViewController.swift */,
 				0406E66E1CCDB4A200FA19B9 /* PlaylistViewController.swift */,
@@ -232,6 +235,7 @@
 				TargetAttributes = {
 					04B893371CCC49A000CD3A83 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 87N9K5368S;
 					};
 					04B8934E1CCC49A100CD3A83 = {
 						CreatedOnToolsVersion = 7.3;
@@ -308,6 +312,7 @@
 				04B8933C1CCC49A000CD3A83 /* AppDelegate.swift in Sources */,
 				04B893441CCC49A000CD3A83 /* SCloudNine.xcdatamodeld in Sources */,
 				0406E6651CCCAC7400FA19B9 /* Constants.swift in Sources */,
+				CC1D53E71CD6C49C000C78E0 /* LookForRoomsToJoinViewController.swift in Sources */,
 				0406E6671CCCD02D00FA19B9 /* MainViewController.swift in Sources */,
 				0406E66D1CCDB49600FA19B9 /* GroupViewController.swift in Sources */,
 			);
@@ -445,11 +450,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SCloudNine/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = iOSDecalProject.SCloudNine;
+				PRODUCT_BUNDLE_IDENTIFIER = SCloudNine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -457,11 +465,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SCloudNine/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = iOSDecalProject.SCloudNine;
+				PRODUCT_BUNDLE_IDENTIFIER = SCloudNine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

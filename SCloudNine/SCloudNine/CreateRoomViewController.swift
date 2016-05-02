@@ -23,6 +23,7 @@ class CreateRoomViewController: UIViewController {
         let navigationItem = UINavigationItem()
         navigationItem.title = "Create A Room"
         
+        
         // Create back button
         let backButton =  UIBarButtonItem(title: "Back", style:   UIBarButtonItemStyle.Plain, target: self, action: "goBack")
         navigationItem.leftBarButtonItem = backButton

@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import MultipeerConnectivity
 
-class JoinRoomViewController: UIViewController {
+class JoinRoomViewController: UIViewController{
     var roomNameTextField = UITextField()
     var passwordTextField = UITextField()
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        appDelegate.mpcManager.delegate = self
+        
+        
+        
         view.backgroundColor = UIColor(red: 0.914, green: 0.918, blue: 0.918, alpha: 1)
         // Do any additional setup after loading the view.
         // Create navigation bar
@@ -77,7 +85,15 @@ class JoinRoomViewController: UIViewController {
         }
     }
     
-
+    
+    func foundPeer() {
+        print("hi")
+    }
+    
+    func lostPeer() {
+        print("bye")
+    }
+    
     /*
     // MARK: - Navigation
 

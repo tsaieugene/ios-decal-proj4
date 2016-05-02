@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MultipeerConnectivity
 
 class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var createButton = UIButton()
@@ -18,9 +19,22 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var groupMembersView: UITableView = UITableView()
     var logo = UIImageView()
     var leaveRoomAlert = UIAlertController()
+    var browser = LookForRoomsToJoinViewController()
+//    var peerID : MCPeerID!
+//    var session : MCSession!
+//    var advertisingAssistant : MCAdvertiserAssistant!
+//    var browser : MCBrowserViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Set up MCP
+//        peerID = MCPeerID(displayName: UIDevice.currentDevice().name)
+//        session = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .Required)
+//        session.delegate = self
+//        browser = MCBrowserViewController(serviceType: "scloud-9", session: session)
+        
+        
+        
         view.backgroundColor = UIColor(red: 0.914, green: 0.918, blue: 0.918, alpha: 1)
         // Create the logo.
         let logoFrame = CGRect(x: Constants.centerHorizontally(Constants.logoWidth), y: Constants.screenHeight*1/20, width: Constants.logoWidth, height: Constants.logoHeight)
@@ -156,8 +170,53 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.view.addSubview(joinButton)
     }
     
-
     
+    
+    
+    
+    
+    
+    
+//    func session(session: MCSession, didReceiveData data: NSData, fromPeer peerID: MCPeerID) {
+//        print("receiving")
+//    }
+//    
+//    func session(session: MCSession, didReceiveStream stream: NSInputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
+//        print("streaming")
+//    }
+//    
+//    func session(session: MCSession, didReceiveCertificate certificate: [AnyObject]?, fromPeer peerID: MCPeerID, certificateHandler: (Bool) -> Void) {
+//        print("certified")
+//    }
+//    
+//    func session(session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, withProgress progress: NSProgress) {
+//        print("gimme them resources")
+//    }
+//    
+//    func session(session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, atURL localURL: NSURL, withError error: NSError?) {
+//        print("i finished")
+//    }
+//    
+//    func session(session: MCSession, peer peerID: MCPeerID, didChangeState state: MCSessionState) {
+//        switch state {
+//        case .Connected:
+//            print("Connected")
+//        case .Connecting:
+//            print("Connecting")
+//        case .NotConnected:
+//            print("Not Connected")
+//        }
+//    }
+//    
+//    func browserViewControllerDidFinish(browserViewController: MCBrowserViewController) {
+//        dismissViewControllerAnimated(true, completion: nil)
+//    }
+//    
+//    func browserViewControllerWasCancelled(browserViewController: MCBrowserViewController) {
+//        dismissViewControllerAnimated(true, completion: nil)
+//    }
+//
+//    
     
     ///////////////// BUTTON ACTIONS /////////////////////////
     
@@ -191,7 +250,8 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     // leads to another VC where rooms can be joined
     func joinRoom() {
-        self.presentViewController(joinRoomVC, animated: true, completion: nil)
+        
+        self.presentViewController(LookForRoomsToJoinViewController(), animated: true, completion: nil)
         groupMembersView.reloadData()
     }
     
@@ -200,4 +260,16 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.presentViewController(createRoomVC, animated: true, completion: nil)
         groupMembersView.reloadData()
     }
+
+    
+    
+    
+//    
+//    func startHosting(action: UIAlertAction!) {
+//        mcAdvertiserAssistant = MCAdvertiserAssistant(serviceType: "hws-kb", discoveryInfo: nil, session: mcSession)
+//        mcAdvertiserAssistant.start()
+//    }
+    
 }
+
+
