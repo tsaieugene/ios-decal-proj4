@@ -40,3 +40,6 @@
   * SongsScreenViewController.swift
   * SearchViewController.swift
   * PlaylistViewController.swift
+
+##Credits
+  * Multipeer Connectivity for connecting devices together (was unsuccessful)
