@@ -11,7 +11,7 @@ import UIKit
 
 class PlaylistViewController: UITableViewController {
     
-    var songs = ["song 1", "song 2", "song 3"]
+    var songs = ["song1", "song 2", "song 3"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +46,16 @@ class PlaylistViewController: UITableViewController {
             tableView.deleteRowsAtIndexPaths([deletionIndexPath], withRowAnimation: .Automatic)
         }
     }
-    
+
+    func voteSong(cell: MyCell) {
+        
+        let myNumber = NSNumberFormatter().numberFromString(cell.votesLabel.text!)
+        var myInt = myNumber!.integerValue
+        myInt = myInt + 1
+        cell.votesLabel.text = "\(myInt)"
+    }
+
+
 }
 
 class Header: UITableViewHeaderFooterView {
@@ -63,6 +72,7 @@ class Header: UITableViewHeaderFooterView {
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Playlist"
+        label.textAlignment = NSTextAlignment.Center
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFontOfSize(24)
         return label
@@ -133,7 +143,7 @@ class MyCell: UITableViewCell {
         
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-16-[v0]-8-[v1(80)]-60-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": nameLabel, "v1": voteButton]))
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-16-[v0]-8-[v1(80)]-90-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": nameLabel, "v1": votesLabel]))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-16-[v0]-8-[v1(80)]-70-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": nameLabel, "v1": votesLabel]))
         
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": nameLabel]))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": deleteButton]))
@@ -146,8 +156,7 @@ class MyCell: UITableViewCell {
     }
     
     func voteSong() {
-        
-
+        playlistViewController?.voteSong(self)
     }
     
 }
